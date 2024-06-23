@@ -23,7 +23,7 @@ export class GetUserByIdUseCase
       const user = await this.#userRepository.getById(input);
       return user;
     } catch (error) {
-      throw new UseCaseFailureError(`找不到 id 為 ${input} 的 user`, {
+      throw new UseCaseFailureError(`id ${input} is not valid for the user`, {
         cause: error,
       });
     }
